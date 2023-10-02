@@ -1,0 +1,63 @@
+# Sweep AI turns bugs & feature requests into code changes (https://sweep.dev)
+# For details on our config file, check out our docs at https://docs.sweep.dev/usage/config
+
+# This is the branch that Sweep will develop from and make pull requests to. Most people use 'main' or 'master' but some users also use 'dev' or 'staging'.
+branch: 'main'
+
+# By default Sweep will read the logs and outputs from your existing Github Actions. To disable this, set this to false.
+gha_enabled: True
+
+# This is the description of your project. It will be used by sweep when creating PRs. You can tell Sweep what's unique about your project, what frameworks you use, or anything else you want.
+#
+# Example:
+#
+# description: sweepai/sweep is a python project. The main api endpoints are in sweepai/api.py. Write code that adheres to PEP8.
+description: 'AerithForge is a fork of armbian which is a framework used to build linux distributions namely debian and ubuntu mostly focused on Single Board Computers, but there are also configurations for other formfactors'
+
+# This sets whether to create pull requests as drafts. If this is set to True, then all pull requests will be created as drafts and GitHub Actions will not be triggered.
+draft: False
+
+# This is a list of directories that Sweep will not be able to edit. In our example, Sweep is unable to modify the .github folder as we do not want Sweep to modify our GitHub Actions.
+blocked_dirs: [
+  ".github/",
+  "cache",
+  "output",
+  "packages/blobs/bt",
+  "packages/blobs/jetson/tegra21x_xusb_firmware",
+  "packages/blobs/mt7623n/wireless/stp_uart_launcher",
+  "packages/blobs/mt7623n/wireless/wmt_loader",
+	"packages/blobs/mt7623n/wireless/wmt_loopback",
+	"packages/blobs/station/firefly_fan_control",
+	"packages/blobs/station/firmware/rtlbt",
+	"packages/blobs/sunxi/h616/inithdmiaudio",
+	"packages/blobs/usb-redirector/usb-redirector-old.tgz",
+	"packages/bsp/aml-s9xx-box/boot/aml_autoscript",
+	"packages/bsp/aml-s9xx-box/boot/s905_autoscript",
+	"packages/bsp/aml-s9xx-box/boot/u-boot-s905",
+	"packages/bsp/aml-s9xx-box/boot/u-boot-s905x-s912",
+	"packages/bsp/aml-s9xx-box/boot/u-boot-s905x2-s922",
+	"packages/bsp/cubox/brcm_patchram_plus",
+	"packages/bsp/olinuxino/usr/sbin/devmem",
+	"packages/bsp/rk3328/z28pro/8822b_hciattach",
+	"packages/bsp/rk3399/hciattach_opi",
+	"packages/pack-uboot/sun50iw9/tools"
+]
+
+# This is a list of documentation links that Sweep will use to help it understand your code. You can add links to documentation for any packages you use here.
+#
+# Example:
+#
+# docs:
+#   - Modal: https://modal.com/docs/reference
+#   - PyGitHub: https://pygithub.readthedocs.io/en/latest/
+docs: []
+
+# Sandbox executes commands in a sandboxed environment to validate code changes after every edit to guarantee pristine code. For more details, see the [Sandbox](./sandbox) page.
+sandbox:
+  install: []
+  check: []
+
+# This setting contains a list of rules that Sweep will check for. If any of these rules are broken in a new commit, Sweep will create an pull request to fix the broken rule.
+# rules:
+#  - Only one issue solution per merge request to make reviewing easier
+#  - All docstrings and comments should be up to date.
