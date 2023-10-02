@@ -18,7 +18,30 @@ description: 'AerithForge is a fork of armbian which is a framework used to buil
 draft: False
 
 # This is a list of directories that Sweep will not be able to edit. In our example, Sweep is unable to modify the .github folder as we do not want Sweep to modify our GitHub Actions.
-blocked_dirs: [ ".github/", "cache", "output", "packages/blobs" ]
+blocked_dirs: [
+  ".github/",
+  "cache",
+  "output",
+  "packages/blobs/bt",
+  "packages/blobs/jetson/tegra21x_xusb_firmware",
+  "packages/blobs/mt7623n/wireless/stp_uart_launcher",
+  "packages/blobs/mt7623n/wireless/wmt_loader",
+	"packages/blobs/mt7623n/wireless/wmt_loopback",
+	"packages/blobs/station/firefly_fan_control",
+	"packages/blobs/station/firmware/rtlbt",
+	"packages/blobs/sunxi/h616/inithdmiaudio",
+	"packages/blobs/usb-redirector/usb-redirector-old.tgz",
+	"packages/bsp/aml-s9xx-box/boot/aml_autoscript",
+	"packages/bsp/aml-s9xx-box/boot/s905_autoscript",
+	"packages/bsp/aml-s9xx-box/boot/u-boot-s905",
+	"packages/bsp/aml-s9xx-box/boot/u-boot-s905x-s912",
+	"packages/bsp/aml-s9xx-box/boot/u-boot-s905x2-s922",
+	"packages/bsp/cubox/brcm_patchram_plus",
+	"packages/bsp/olinuxino/usr/sbin/devmem",
+	"packages/bsp/rk3328/z28pro/8822b_hciattach",
+	"packages/bsp/rk3399/hciattach_opi",
+	"packages/pack-uboot/sun50iw9/tools"
+]
 
 # This is a list of documentation links that Sweep will use to help it understand your code. You can add links to documentation for any packages you use here.
 #
